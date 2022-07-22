@@ -1,27 +1,33 @@
-package task1;
+package homework1;
 
 import java.lang.reflect.Array;
 
 public class Hometask1 {
 
     public static void main(String[] args) {
-        // Task 1
-        System.out.println("Something written in console");
 
-        String [] weekdays = {"Monday", "Tuesday","Wednesday","Thursday","Friday"};
+        // Task 1
+
+        System.out.println("Something written in console");
+        String[] weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
         System.out.println(weekdays[0]);
 
+        for (String arg : args) {
+            System.out.println("Print this: " + arg);
+        }
+
         // Task 2
-        int [] numbers = {3, 7, 6, 13, 33, 9, -100, 25};
+        int[] numbers = {3, 7, 6, 13, 33, 9, -100, 25};
         int i = 0;
         int max = numbers[0];
         int min = numbers[0];
-        while (i < Array.getLength(numbers)){
-            System.out.println(numbers[i]);
-            if(max < numbers[i]){
+        while (i < Array.getLength(numbers)) {
+            System.out.print(numbers[i] + " ");
+
+            if (max < numbers[i]) {
                 max = numbers[i];
             }
-            if (min > numbers[i]){
+            if (min > numbers[i]) {
                 min = numbers[i];
             }
             i++;
@@ -35,9 +41,9 @@ public class Hometask1 {
         // Bubble Sort
         int a;
         // int [] numbers2 = {3, 7, 6, 13, 33, 9, -100, 25};
-        for (i = 0; i < numbers.length;i++){
-            for (int j = i+1 ; j< numbers.length;j++) {
-                if(numbers[i]>numbers[j]){
+        for (i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] > numbers[j]) {
                     a = numbers[i];
                     numbers[i] = numbers[j];
                     numbers[j] = a;
@@ -52,8 +58,8 @@ public class Hometask1 {
             i++;
         }*/
 
-        for (int var:numbers) {
-            System.out.println(var);
+        for (int var : numbers) {
+            System.out.print(var + " ");
         }
 
     }
