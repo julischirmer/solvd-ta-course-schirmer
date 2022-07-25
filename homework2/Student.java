@@ -6,11 +6,10 @@ public class Student extends Person {
 
     private double averagemark;
 
-    public Student(int dni, String name, String lastname, double averagemark) {
+    public Student(int dni, String name, String lastname) {
         this.setDni(dni);
         this.setName(name);
         this.setLastname(lastname);
-        this.setAverageMark(averagemark);
     }
 
 

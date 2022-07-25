@@ -7,9 +7,8 @@ public class Course {
     private LinkedList<Subject> subjects;
     private double pricepermonth;
 
-    public Course(String coursename, double pricepermonth, LinkedList<Subject> subjects) {
+    public Course(String coursename, double pricepermonth) {
         this.setCoursename(coursename);
-        this.setSubjects(subjects);
         this.setPricepermonth(pricepermonth);
     }
 

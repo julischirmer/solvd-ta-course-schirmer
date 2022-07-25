@@ -1,19 +1,19 @@
 package homework2;
 
-public class Subject {
+public class Subject extends Department {
     private String name;
     private String year;
     private String time;
-    private String department;
     private String description;
 
-    public Subject(String name, String description, String time, String department, String year) {
+    public Subject(int deparmentnum, String name, String description, String time, String year) {
+        super(deparmentnum);
         this.setName(name);
         this.setDescription(description);
         this.setTime(time);
         this.setYear(year);
-        this.setDepartment(department);
     }
+
 
     public String getName() {
         return name;
@@ -39,13 +39,6 @@ public class Subject {
         this.time = time;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
 
     public String getDescription() {
         return description;
@@ -61,7 +54,6 @@ public class Subject {
                 "name='" + name + '\'' +
                 ", year='" + year + '\'' +
                 ", time='" + time + '\'' +
-                ", department='" + department + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }
