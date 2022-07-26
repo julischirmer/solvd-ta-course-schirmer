@@ -6,10 +6,10 @@ public class Course extends Plan {
     private String coursename;
     private LinkedList<Subject> subjects;
     private double pricepermonth;
-    private int planyear;
-    private String plandescription;
 
-    public Course(String coursename, double pricepermonth) {
+
+    public Course(int planyear, String coursename, double pricepermonth) {
+        super(planyear);
         this.setCoursename(coursename);
         this.setPricepermonth(pricepermonth);
     }
@@ -47,13 +47,5 @@ public class Course extends Plan {
                 '}';
     }
 
-    @Override
-    public int getPlanyear() {
-        return this.planyear;
-    }
 
-    @Override
-    public String getPlandescription() {
-        return this.plandescription;
-    }
 }

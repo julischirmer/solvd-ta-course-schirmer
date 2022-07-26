@@ -55,8 +55,8 @@ public class Main {
         subjectslawyer.add(sub1law);
         subjectslawyer.add(sub2law);
 
-        Course soft_eng = new Course("Software Engineering", 800);
-        Course lawyer = new Course("Lawyer", 750);
+        Course soft_eng = new Course(2020, "Software Engineering", 800);
+        Course lawyer = new Course(2021, "Lawyer", 750);
         soft_eng.setSubjects(subjectsse);
         lawyer.setSubjects(subjectslawyer);
         System.out.println(soft_eng);

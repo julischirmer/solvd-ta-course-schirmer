@@ -1,8 +1,10 @@
 package homework2;
 
-public abstract class Plan {
+public class Plan {
+    private int planyear;
+    private String plandescription;
 
-    public abstract int getPlanyear();
-
-    public abstract String getPlandescription();
+    public Plan(int planyear) {
+        this.planyear = planyear;
+    }
 }
