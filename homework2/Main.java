@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Student st = new Student(12345, "Julian", "Lead");
 
-
+        // Creating Students
         LinkedList<Student> students = new LinkedList<>();
 
         Student s = new Student(1234, "Julian", "Schirmer");
@@ -28,6 +28,8 @@ public class Main {
         System.out.println("Use of equals");
         System.out.println("Constains pCopy: " + students.contains(sCopy));*/
 
+        // Creating departments
+
         Department systems = new Department(1234);
         Department law = new Department(1235);
 
@@ -36,6 +38,8 @@ public class Main {
 
         law.setNamedepartment("Law");
         law.setDescription("Law Department desc.");
+
+        // Creating subjects per studies
 
         LinkedList<Subject> subjectsse = new LinkedList<>();
         LinkedList<Subject> subjectslawyer = new LinkedList<>();
@@ -55,6 +59,7 @@ public class Main {
         subjectslawyer.add(sub1law);
         subjectslawyer.add(sub2law);
 
+        // Creating courses
         Course soft_eng = new Course(2020, "Software Engineering", 800);
         Course lawyer = new Course(2021, "Lawyer", 750);
         soft_eng.setSubjects(subjectsse);
@@ -62,13 +67,15 @@ public class Main {
         System.out.println(soft_eng);
         System.out.println(lawyer);
 
+
+        // Creating professors
         LinkedList<Professor> proffesorsDataScience = new LinkedList<>();
 
         Professor profds = new Professor(17171717, "Miguel", "Juarez", 1000);
 
         proffesorsDataScience.add(profds);
 
-
+        // Creatin exam
         Exam exam = new Exam(1234, "Data Science", "Cleaning, Modeling and ...",
                 "two times per week", "Systems", "Third year",
                 LocalDate.of(2022, 9, 27), 1234, proffesorsDataScience);
