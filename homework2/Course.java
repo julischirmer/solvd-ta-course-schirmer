@@ -2,10 +2,12 @@ package homework2;
 
 import java.util.LinkedList;
 
-public class Course {
+public class Course extends Plan {
     private String coursename;
     private LinkedList<Subject> subjects;
     private double pricepermonth;
+    private int planyear;
+    private String plandescription;
 
     public Course(String coursename, double pricepermonth) {
         this.setCoursename(coursename);
@@ -43,5 +45,15 @@ public class Course {
                 "price per month (usd)='" + pricepermonth + '\'' +
                 ", subjects=" + subjects +
                 '}';
+    }
+
+    @Override
+    public int getPlanyear() {
+        return this.planyear;
+    }
+
+    @Override
+    public String getPlandescription() {
+        return this.plandescription;
     }
 }
