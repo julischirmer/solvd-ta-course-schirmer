@@ -125,20 +125,16 @@ public class Main {
         LinkedList<Course> coursessys = new LinkedList<>();
         LinkedList<Course> courseslaw = new LinkedList<>();
 
-        Course course1sys = new Course(1111, 2, 800);
-        course1sys.setIdsubject(1234);
+        Course course1sys = new Course(1111, 2, 800, sub1sys);
         course1sys.setAvailability(122); // amount of quota
 
-        Course course2sys = new Course(1111, 2, 801);
-        course2sys.setIdsubject(1234);
+        Course course2sys = new Course(1111, 2, 801, sub1sys);
         course2sys.setAvailability(90); // amount of quota
 
-        Course course1law = new Course(1112, 4, 223);
-        course1law.setIdsubject(1212);
+        Course course1law = new Course(1112, 4, 223, sub1law);
         course1law.setAvailability(32); // amount of quota
 
-        Course course2law = new Course(1112, 4, 224);
-        course2law.setIdsubject(1213);
+        Course course2law = new Course(1112, 4, 224, sub2law);
         course2law.setAvailability(66); // amount of quota
 
 

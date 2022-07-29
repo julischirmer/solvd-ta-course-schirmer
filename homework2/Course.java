@@ -2,14 +2,15 @@ package homework2;
 
 public class Course extends Plan {
     private int idcourse;
-    private int idsubject;
+    private Subject subject;
     private int year;
     private int availability;
 
 
-    public Course(int iddepartment, int idplan, int idcourse) {
+    public Course(int iddepartment, int idplan, int idcourse, Subject subject) {
         super(iddepartment, idplan);
         this.setIdcourse(idcourse);
+        this.setSubject(subject);
     }
 
     public int getIdcourse() {
@@ -20,14 +21,13 @@ public class Course extends Plan {
         this.idcourse = idcourse;
     }
 
-    public int getIdsubject() {
-        return idsubject;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setIdsubject(int idsubject) {
-        this.idsubject = idsubject;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
-
 
     public int getYear() {
         return year;
@@ -50,9 +50,9 @@ public class Course extends Plan {
     public String toString() {
         return "\nCourse{" +
                 "idcourse=" + idcourse +
-                ", idsubject=" + idsubject +
                 ", year=" + year +
                 ", availability=" + availability +
+                ", subject=" + this.getSubject() +
                 '}';
     }
 }
