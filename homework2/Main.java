@@ -5,7 +5,6 @@ import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        Student st = new Student(12345, "Julian", "Lead");
 
         // Creating Students
         LinkedList<Student> students = new LinkedList<>();
@@ -21,12 +20,6 @@ public class Main {
         students.add(s);
         students.push(s1);
 
-        /*System.out.println("Use of toString");
-        System.out.println(students);
-        System.out.println(st);
-
-        System.out.println("Use of equals");
-        System.out.println("Constains pCopy: " + students.contains(sCopy));*/
 
         System.out.println(students);
 
