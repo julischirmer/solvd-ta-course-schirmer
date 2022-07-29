@@ -1,19 +1,28 @@
 package homework2;
 
-public class Subject extends Department {
-    private String name;
-    private String year;
-    private String time;
-    private String description;
+public class Subject extends Plan {
 
-    public Subject(int deparmentnum, String name, String description, String time, String year) {
-        super(deparmentnum);
-        this.setName(name);
-        this.setDescription(description);
-        this.setTime(time);
-        this.setYear(year);
+    private int idsubject;
+    private String name;
+    private String subjectdesc;
+    private int week_hours;
+    private int total_hours;
+
+
+    public Subject(int iddepartment, int idplan, int idsubject) {
+        super(iddepartment, idplan);
+        this.setIdsubject(idsubject);
+
     }
 
+
+    public int getIdsubject() {
+        return idsubject;
+    }
+
+    public void setIdsubject(int idsubject) {
+        this.idsubject = idsubject;
+    }
 
     public String getName() {
         return name;
@@ -23,38 +32,38 @@ public class Subject extends Department {
         this.name = name;
     }
 
-    public String getYear() {
-        return year;
+    public int getWeek_hours() {
+        return week_hours;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setWeek_hours(int week_hours) {
+        this.week_hours = week_hours;
     }
 
-    public String getTime() {
-        return time;
+    public int getTotal_hours() {
+        return total_hours;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setTotal_hours(int total_hours) {
+        this.total_hours = total_hours;
     }
 
-
-    public String getDescription() {
-        return description;
+    public String getSubjectdesc() {
+        return subjectdesc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSubjectdesc(String subjectdesc) {
+        this.subjectdesc = subjectdesc;
     }
 
     @Override
     public String toString() {
         return "\nSubject{" +
-                "name='" + name + '\'' +
-                ", year='" + year + '\'' +
-                ", time='" + time + '\'' +
-                ", description='" + description + '\'' +
+                "idsubject=" + idsubject +
+                ", name='" + name + '\'' +
+                ", subjectdesc='" + subjectdesc + '\'' +
+                ", week_hours=" + week_hours +
+                ", total_hours=" + total_hours +
                 '}';
     }
 }

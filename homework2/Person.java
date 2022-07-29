@@ -2,7 +2,7 @@ package homework2;
 
 import java.util.Objects;
 
-public class Person {
+public abstract class Person {
 
     private int dni;
     private String name;
@@ -33,6 +33,7 @@ public class Person {
         this.lastname = lastname;
     }
 
+    public abstract void abstractMethod();
 
     @Override
     public String toString() {

@@ -50,5 +50,10 @@ public class Student extends Person {
         return Objects.hash(getDni());
     }
 
+    @Override
+    public void abstractMethod() {
+        System.out.println("This is an abstractMethod in Student");
+    }
+
 
 }

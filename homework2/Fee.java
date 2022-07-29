@@ -1,7 +1,7 @@
 package homework2;
 
 
-public class Fee extends Student {
+public final class Fee extends Student implements InterfaceSample {
 
     private int month; // 01 January - 12 December
     private boolean isPay; // True = Pay the month fee & false = don't pay the month fee
@@ -39,4 +39,8 @@ public class Fee extends Student {
     }
 
 
+    @Override
+    public void example() {
+        System.out.println("Implementing an abstract method from interface");
+    }
 }

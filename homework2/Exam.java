@@ -9,9 +9,8 @@ public class Exam extends Subject {
     private int examnumber;
     private LinkedList<Professor> professors;
 
-    public Exam(int departmentnum, String name, String description, String time, String department, String year, LocalDate examdate,
-                int examnumber, LinkedList<Professor> professors) {
-        super(departmentnum, name, description, time, year);
+    public Exam(int iddepartment, int idplan, int idsubject, LocalDate examdate, int examnumber, LinkedList<Professor> professors) {
+        super(iddepartment, idplan, idsubject);
         this.setExamdate(examdate);
         this.setExamnumber(examnumber);
         this.setProfessors(professors);

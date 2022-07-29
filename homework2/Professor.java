@@ -29,4 +29,9 @@ public class Professor extends Person {
                 ", salary=" + salary +
                 '}';
     }
+
+    @Override
+    public void abstractMethod() {
+        System.out.println("This is an abstract method of Professor");
+    }
 }

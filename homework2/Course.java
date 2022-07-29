@@ -1,51 +1,58 @@
 package homework2;
 
-import java.util.LinkedList;
-
 public class Course extends Plan {
-    private String coursename;
-    private LinkedList<Subject> subjects;
-    private double pricepermonth;
+    private int idcourse;
+    private int idsubject;
+    private int year;
+    private int availability;
 
 
-    public Course(int planyear, String coursename, double pricepermonth) {
-        super(planyear);
-        this.setCoursename(coursename);
-        this.setPricepermonth(pricepermonth);
+    public Course(int iddepartment, int idplan, int idcourse) {
+        super(iddepartment, idplan);
+        this.setIdcourse(idcourse);
     }
 
-    public String getCoursename() {
-        return coursename;
+    public int getIdcourse() {
+        return idcourse;
     }
 
-    public void setCoursename(String coursename) {
-        this.coursename = coursename;
+    public void setIdcourse(int idcourse) {
+        this.idcourse = idcourse;
     }
 
-    public LinkedList<Subject> getSubjects() {
-        return subjects;
+    public int getIdsubject() {
+        return idsubject;
     }
 
-    public void setSubjects(LinkedList<Subject> subjects) {
-        this.subjects = subjects;
+    public void setIdsubject(int idsubject) {
+        this.idsubject = idsubject;
     }
 
-    public double getPricepermonth() {
-        return pricepermonth;
+
+    public int getYear() {
+        return year;
     }
 
-    public void setPricepermonth(double pricepermonth) {
-        this.pricepermonth = pricepermonth;
+    public void setYear(int year) {
+        this.year = year;
     }
+
+    public int getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(int availability) {
+        this.availability = availability;
+    }
+
 
     @Override
     public String toString() {
-        return "\nUniversity course{" +
-                "coursename='" + coursename + '\'' +
-                "price per month (usd)='" + pricepermonth + '\'' +
-                ", subjects=" + subjects +
+        return "\nCourse{" +
+                "idcourse=" + idcourse +
+                ", idsubject=" + idsubject +
+                ", year=" + year +
+                ", availability=" + availability +
                 '}';
     }
-
-
 }
