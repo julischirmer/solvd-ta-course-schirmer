@@ -3,40 +3,30 @@ package homework2;
 import java.util.LinkedList;
 
 public class University {
-    private String universityname;
-    private String city;
-    private String address;
+    private String name;
+    private String location;
+
     private LinkedList<Course> courses = new LinkedList<>();
 
-    public University(String name, String city, String address, LinkedList<Course> courses) {
-        this.setUniversityname(name);
-        this.setCity(city);
-        this.setAddress(address);
+    public University(String name, LinkedList<Course> courses) {
+        this.setName(name);
         this.setCourses(courses);
     }
 
-    public String getUniversityname() {
-        return universityname;
+    public String getName() {
+        return name;
     }
 
-    public void setUniversityname(String universityname) {
-        this.universityname = universityname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCity() {
-        return city;
+    public String getLocation() {
+        return location;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public LinkedList<Course> getCourses() {
@@ -50,9 +40,7 @@ public class University {
     @Override
     public String toString() {
         return "\nUniversity{" +
-                "universityname='" + universityname + '\'' +
-                ", city='" + city + '\'' +
-                ", address='" + address + '\'' +
+                "universityname='" + name + '\'' +
                 ", courses=" + courses +
                 '}';
     }

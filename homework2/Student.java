@@ -1,6 +1,9 @@
 package homework2;
 
+import java.util.InputMismatchException;
+import java.util.LinkedList;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Student extends Person {
 
@@ -12,6 +15,34 @@ public class Student extends Person {
         this.setLastname(lastname);
     }
 
+
+    public Student(int dni) {
+        this.setDni(dni);
+    }
+
+    public static void findStudent(LinkedList<Student> students) {
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Insert dni to find student: ");
+            Student studentcompare = new Student(scanner.nextInt());
+
+            if (students.contains(studentcompare)) {
+                System.out.println("The student was found ");
+                Student studentFind = students.get(students.indexOf(studentcompare));
+                System.out.println(studentFind);
+
+            } else {
+                System.out.println("The student wasn't found");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("The DNI must be integer");
+            System.out.println("The program keep working...");
+        }
+
+
+    }
 
     public double getAverageMark() {
         return averagemark;
@@ -51,8 +82,8 @@ public class Student extends Person {
     }
 
     @Override
-    public void abstractMethod() {
-        System.out.println("This is an abstractMethod in Student");
+    public void getDegree() {
+        System.out.println("The student doesn't have a degree");
     }
 
 

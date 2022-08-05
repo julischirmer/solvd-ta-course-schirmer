@@ -3,7 +3,6 @@ package homework2;
 public class Professor extends Person {
     private double salary;
 
-
     public Professor(int dni, String name, String lastname, double salary) {
         this.setDni(dni);
         this.setName(name);
@@ -31,7 +30,7 @@ public class Professor extends Person {
     }
 
     @Override
-    public void abstractMethod() {
+    public void getDegree() {
         System.out.println("This is an abstract method of Professor");
     }
 }

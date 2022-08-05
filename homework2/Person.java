@@ -7,6 +7,7 @@ public abstract class Person {
     private int dni;
     private String name;
     private String lastname;
+    private String degree;
 
 
     public int getDni() {
@@ -33,7 +34,7 @@ public abstract class Person {
         this.lastname = lastname;
     }
 
-    public abstract void abstractMethod();
+    public abstract void getDegree();
 
     @Override
     public String toString() {

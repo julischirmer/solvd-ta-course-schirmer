@@ -1,27 +1,24 @@
 package homework2;
 
-public class Subject extends Plan {
+public class Subject {
 
-    private int idsubject;
+    private int idSubject;
     private String name;
-    private String subjectdesc;
-    private int week_hours;
-    private int total_hours;
+    private String subjectDesc;
+    private int weekHours;
+    private int totalHours;
 
 
-    public Subject(int iddepartment, int idplan, int idsubject) {
-        super(iddepartment, idplan);
-        this.setIdsubject(idsubject);
-
+    public Subject(int idSubject) {
+        this.setIdSubject(idSubject);
     }
 
-
-    public int getIdsubject() {
-        return idsubject;
+    public int getIdSubject() {
+        return idSubject;
     }
 
-    public void setIdsubject(int idsubject) {
-        this.idsubject = idsubject;
+    public void setIdSubject(int idSubject) {
+        this.idSubject = idSubject;
     }
 
     public String getName() {
@@ -32,38 +29,38 @@ public class Subject extends Plan {
         this.name = name;
     }
 
-    public int getWeek_hours() {
-        return week_hours;
+    public String getSubjectDesc() {
+        return subjectDesc;
     }
 
-    public void setWeek_hours(int week_hours) {
-        this.week_hours = week_hours;
+    public void setSubjectDesc(String subjectDesc) {
+        this.subjectDesc = subjectDesc;
     }
 
-    public int getTotal_hours() {
-        return total_hours;
+    public int getWeekHours() {
+        return weekHours;
     }
 
-    public void setTotal_hours(int total_hours) {
-        this.total_hours = total_hours;
+    public void setWeekHours(int weekHours) {
+        this.weekHours = weekHours;
     }
 
-    public String getSubjectdesc() {
-        return subjectdesc;
+    public int getTotalHours() {
+        return totalHours;
     }
 
-    public void setSubjectdesc(String subjectdesc) {
-        this.subjectdesc = subjectdesc;
+    public void setTotalHours(int totalHours) {
+        this.totalHours = totalHours;
     }
 
     @Override
     public String toString() {
         return "\nSubject{" +
-                "idsubject=" + idsubject +
+                "idsubject=" + idSubject +
                 ", name='" + name + '\'' +
-                ", subjectdesc='" + subjectdesc + '\'' +
-                ", week_hours=" + week_hours +
-                ", total_hours=" + total_hours +
+                ", subjectdesc='" + subjectDesc + '\'' +
+                ", week_hours=" + weekHours +
+                ", total_hours=" + totalHours +
                 '}';
     }
 }

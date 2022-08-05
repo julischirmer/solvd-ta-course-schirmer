@@ -3,18 +3,19 @@ package homework2;
 import java.time.LocalDate;
 import java.util.LinkedList;
 
-public class Exam extends Subject {
+public class Exam {
 
     private LocalDate examdate;
     private int examnumber;
     private LinkedList<Professor> professors;
+    private Subject subject;
 
-    public Exam(int iddepartment, int idplan, int idsubject, LocalDate examdate, int examnumber, LinkedList<Professor> professors) {
-        super(iddepartment, idplan, idsubject);
+/*    public Exam(LocalDate examdate, int examnumber, LinkedList<Professor> professors) {
+
         this.setExamdate(examdate);
         this.setExamnumber(examnumber);
         this.setProfessors(professors);
-    }
+    }*/
 
     public LocalDate getExamdate() {
         return examdate;

@@ -1,35 +1,31 @@
 package homework2;
 
 public class Department {
-    private int iddeparment;
-    private String descdepartment; //Systems, Law, Science, etc.
+    private int idDeparment;
+    private String descDepartment; //Systems, Law, Science, etc.
 
 
-    public Department(int iddeparment) {
-        this.setIddeparment(iddeparment);
+    public int getIdDeparment() {
+        return idDeparment;
     }
 
-    public int getIddeparment() {
-        return iddeparment;
+    public void setIdDeparment(int idDeparment) {
+        this.idDeparment = idDeparment;
     }
 
-    public void setIddeparment(int iddeparment) {
-        this.iddeparment = iddeparment;
+    public String getDescDepartment() {
+        return descDepartment;
     }
 
-    public String getDescdepartment() {
-        return descdepartment;
-    }
-
-    public void setDescdepartment(String descdepartment) {
-        this.descdepartment = descdepartment;
+    public void setDescDepartment(String descDepartment) {
+        this.descDepartment = descDepartment;
     }
 
     @Override
     public String toString() {
         return "\nDepartment{" +
-                "iddeparment=" + iddeparment +
-                ", descdepartment='" + descdepartment + '\'' +
+                "iddeparment=" + idDeparment +
+                ", descdepartment='" + descDepartment + '\'' +
                 '}';
     }
 }
