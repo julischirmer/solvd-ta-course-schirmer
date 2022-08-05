@@ -1,6 +1,6 @@
 package homework2;
 
-public class Professor extends Person {
+public final class Professor extends Person {
     private double salary;
 
     public Professor(int dni, String name, String lastname, double salary) {

@@ -30,11 +30,12 @@ public class Course {
     public static void isTheCourseAvailable(LinkedList<Course> courses) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insert course ID");
-        Course courseToFind = new Course(scanner.nextInt());
-        if (courses.contains(courseToFind)) {
-            if (courseToFind.getAvailability() > 0) {
+        Course course = new Course(scanner.nextInt());
+        if (courses.contains(course)) {
+            Course coursefinded = courses.get(courses.indexOf(course));
+            if (coursefinded.getAvailability() > 0) {
                 System.out.println("The Course is available");
-                System.out.println("The course quota is: " + courseToFind.getAvailability());
+                System.out.println("The course quota is: " + coursefinded.getAvailability());
             } else {
                 System.out.println("The Course is completed");
             }
