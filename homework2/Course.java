@@ -1,5 +1,6 @@
 package homework2;
 
+import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -28,31 +29,58 @@ public class Course {
     }
 
     public static void isTheCourseAvailable(LinkedList<Course> courses) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Insert course ID");
-        Course course = new Course(scanner.nextInt());
-        if (courses.contains(course)) {
-            Course coursefinded = courses.get(courses.indexOf(course));
-            if (coursefinded.getAvailability() > 0) {
-                System.out.println("The Course is available");
-                System.out.println("The course quota is: " + coursefinded.getAvailability());
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Insert course ID");
+            Course course = new Course(scanner.nextInt());
+            if (courses.contains(course)) {
+                Course coursefinded = courses.get(courses.indexOf(course));
+                if (coursefinded.getAvailability() > 0) {
+                    System.out.println("The Course is available");
+                    System.out.println("The course quota is: " + coursefinded.getAvailability());
+                } else {
+                    System.out.println("The Course is completed");
+                }
             } else {
-                System.out.println("The Course is completed");
+                System.out.println("The id Course doesn't exist");
             }
-        } else {
-            System.out.println("The id Course doesn't exist");
+        } catch (InputMismatchException e) {
+            System.out.println("The course id must be a number");
+            System.out.println("The program keeps working...");
         }
     }
 
     public static void getCourseCost(LinkedList<Course> courses) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Insert course ID");
-        Course course = new Course(scanner.nextInt());
-        if (courses.contains(course)) {
-            Course coursefind = courses.get(courses.indexOf(course));
-            System.out.println("The course: " + coursefind.getName() + " has the cost: u$d " + coursefind.getCost());
-        } else {
-            System.out.println("The course doesn't exist");
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Insert course ID");
+            Course course = new Course(scanner.nextInt());
+            if (courses.contains(course)) {
+                Course coursefind = courses.get(courses.indexOf(course));
+                System.out.println("The course: " + coursefind.getName() + " has the cost: u$d " + coursefind.getCost());
+            } else {
+                System.out.println("The course doesn't exist");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("The course id must be a number");
+            System.out.println("The program keeps working...");
+        }
+    }
+
+    public static void getCourseSubjects(LinkedList<Course> courses) {
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Insert course ID");
+            Course course = new Course(scanner.nextInt());
+            if (courses.contains(course)) {
+                Course coursefinded = courses.get(courses.indexOf(course));
+                System.out.println(coursefinded.getSubjects());
+            } else {
+                System.out.println("The id Course doesn't exist");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("The course id must be a number");
+            System.out.println("The program keeps working...");
         }
     }
 

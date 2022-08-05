@@ -13,6 +13,12 @@ public class Subject {
         this.setIdSubject(idSubject);
     }
 
+    public Subject(int idSubject, String name) {
+        this.setIdSubject(idSubject);
+        this.setName(name);
+    }
+
+
     public int getIdSubject() {
         return idSubject;
     }

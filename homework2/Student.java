@@ -37,8 +37,8 @@ public class Student extends Person {
                 System.out.println("The student wasn't found");
             }
         } catch (InputMismatchException e) {
-            System.out.println("The DNI must be integer");
-            System.out.println("The program keep working...");
+            System.out.println("The DNI must be a number");
+            System.out.println("The program keeps working...");
         }
 
 
