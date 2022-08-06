@@ -1,7 +1,10 @@
 package homework2;
 
 
+import homework2.exceptions.InvalidMonthNumberException;
+
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public final class Fee extends Student {
 
@@ -10,9 +13,13 @@ public final class Fee extends Student {
     private double costPerMonth;
     private Course course;
 
-    public Fee(int dni, int month, boolean isPay, double amountpay) {
+    public Fee(int dni, int month, boolean isPay) {
         super(dni);
-        this.setMonthFee(month);
+        try {
+            this.setMonthFee(month);
+        } catch (InvalidMonthNumberException e) {
+            System.out.println(e.getMessage());
+        }
         this.setPay(isPay);
     }
 
@@ -25,12 +32,42 @@ public final class Fee extends Student {
         }
     }
 
+    public static Fee createFee() throws InvalidMonthNumberException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Insert student dni");
+        int dni = scanner.nextInt();
+        System.out.println("Insert number month 0 January - 11 December");
+        int month = scanner.nextInt();
+        int pay = 2;
+        boolean isPay = false;
+        while (pay != 0 && pay != 1) {
+            System.out.println("is Pay? 1: true 0: false");
+            pay = scanner.nextInt();
+            if (pay == 0) {
+                isPay = false;
+            } else if (pay == 1) {
+                isPay = true;
+            } else {
+                System.out.println("The answer must be 0 or 1");
+            }
+        }
+        Fee fee = new Fee(dni, month, isPay);
+        System.out.println(fee);
+        return fee;
+
+    }
+
     public int getMonthFee() {
         return month;
     }
 
-    public void setMonthFee(int month) {
-        this.month = month;
+    public void setMonthFee(int month) throws InvalidMonthNumberException {
+        if (month >= 0 && month <= 11) {
+            this.month = month;
+        } else {
+            throw new InvalidMonthNumberException("The month must be an integer between 0 January to 11 December");
+        }
+
     }
 
     public boolean isPay() {
@@ -41,5 +78,13 @@ public final class Fee extends Student {
         isPay = pay;
     }
 
+    @Override
+    public String toString() {
+        return "Fee{" +
+                "dni=" + getDni() +
+                ", month=" + month +
+                ", isPay=" + isPay +
 
+                '}';
+    }
 }

@@ -1,6 +1,8 @@
 package homework2;
 
-public class Inscription implements Register {
+import homework2.interfaces.IRegister;
+
+public class Inscription implements IRegister {
 
     private int idInscription;
     private Student student;

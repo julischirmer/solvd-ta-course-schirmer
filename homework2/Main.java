@@ -1,20 +1,30 @@
 package homework2;
 
+import homework2.exceptions.InvalidCourseCostException;
+
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
-        run();
+        try {
+            run();
+        } catch (InvalidCourseCostException e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 
-    public static void run() {
+    public static void run() throws InvalidCourseCostException {
 
         LinkedList<Student> students = new LinkedList<>();
 
-        Student student = new Student(111, "Julián", "Schirmer");
-        Student student2 = new Student(112, "Carlos", "Perez");
+        Student student = new Student(111, "Julián", "Schirmer",
+                "j@gmail.com", LocalDate.of(2001, 10, 30));
+        Student student2 = new Student(112, "Carlos", "Perez",
+                "c@gmail.com", LocalDate.of(1999, 2, 14));
 
         students.add(student);
         students.add(student2);
@@ -43,36 +53,49 @@ public class Main {
 
     }
 
-    public static void menu(LinkedList<Student> students, LinkedList<Course> courses) {
+    public static void menu(LinkedList<Student> students, LinkedList<Course> courses) throws InvalidCourseCostException {
+        Logger logger = Logger.getLogger("MyLog");
         int opc = 1;
         while (opc != 5) {
-            System.out.println("Chose an option: \n 1. Find student by dni \n 2. Cost of a Course \n 3.Is the course available? " +
-                    "\n 4. See subjects per course \n 5. Exit");
+            System.out.println("Chose an option: \n 1. Create Course \n 2. Find student by dni \n 3. Cost of a Course" +
+                    " \n 4.Is the course available? \n 5. See subjects per course \n 6.  \n 7. Exit");
             Scanner scanner = new Scanner(System.in);
             opc = scanner.nextInt();
             switch (opc) {
                 case 1: {
-                    // Find student by dni
-                    Student.findStudent(students);
+                    // Create new course
+                    System.out.println(Course.createCourse());
                     break;
                 }
+
                 case 2: {
+                    // Find student by dni
+                    Student.findStudent(students);
+                    logger.info("Info");
+                    break;
+                }
+                case 3: {
                     // What is the cost of a course?
                     Course.getCourseCost(courses);
                     break;
                 }
-                case 3: {
+                case 4: {
                     //Is the course available?
                     Course.isTheCourseAvailable(courses);
                     break;
 
                 }
-                case 4: {
+                case 5: {
                     // What are the subjects in a course
                     Course.getCourseSubjects(courses);
                     break;
                 }
-                case 5: {
+                case 6: {
+                    // Create Fee
+                    Fee.createFee();
+                    break;
+                }
+                case 7: {
                     System.out.println("End");
                     System.out.close();
                     break;

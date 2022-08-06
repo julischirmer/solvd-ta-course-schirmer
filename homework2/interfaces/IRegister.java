@@ -1,6 +1,6 @@
-package homework2;
+package homework2.interfaces;
 
-public interface Register {
+public interface IRegister {
 
 
     public abstract void create();

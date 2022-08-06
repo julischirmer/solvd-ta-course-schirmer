@@ -1,5 +1,7 @@
 package homework2;
 
+import homework2.exceptions.InvalidCourseCostException;
+
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Objects;
@@ -14,7 +16,7 @@ public class Course {
     private double cost;
 
 
-    public Course(int idcourse, double price, String name) {
+    public Course(int idcourse, double price, String name) throws InvalidCourseCostException {
         this.setIdCourse(idcourse);
         this.setName(name);
         this.setCost(price);
@@ -84,6 +86,18 @@ public class Course {
         }
     }
 
+    public static Course createCourse() throws InvalidCourseCostException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Insert course name");
+        String nameCourse = scanner.nextLine();
+        System.out.println("Insert course ID");
+        int courseId = scanner.nextInt();
+        System.out.println("Insert cost course");
+        double courseprice = scanner.nextDouble();
+        Course course = new Course(courseId, courseprice, nameCourse);
+        return course;
+    }
+
     public int getIdCourse() {
         return idCourse;
     }
@@ -104,8 +118,12 @@ public class Course {
         return cost;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    public void setCost(double cost) throws InvalidCourseCostException {
+        if (cost < 0) {
+            throw new InvalidCourseCostException("The cost can't be negative");
+        } else {
+            this.cost = cost;
+        }
     }
 
     public int getAvailability() {
@@ -132,8 +150,8 @@ public class Course {
     public String toString() {
         return "Course{" +
                 "idCourse=" + idCourse +
-                ", total=" + total +
-                ", price=" + cost +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
                 '}';
     }
 

@@ -1,5 +1,7 @@
 package homework2;
 
+import homework2.exceptions.InvalidSalary;
+
 public final class Professor extends Person {
     private double salary;
 
@@ -7,15 +9,24 @@ public final class Professor extends Person {
         this.setDni(dni);
         this.setName(name);
         this.setLastname(lastname);
-        this.setSalary(salary);
+        try {
+            this.setSalary(salary);
+        } catch (InvalidSalary e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setSalary(double salary) throws InvalidSalary {
+        if (salary > 0) {
+            this.salary = salary;
+        } else {
+            throw new InvalidSalary("The salary must be upper than zero");
+        }
+
     }
 
 

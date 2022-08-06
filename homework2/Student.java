@@ -1,5 +1,8 @@
 package homework2;
 
+import homework2.exceptions.InvalidMailException;
+
+import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Objects;
@@ -9,10 +12,13 @@ public class Student extends Person {
 
     private double averagemark;
 
-    public Student(int dni, String name, String lastname) {
+    public Student(int dni, String name, String lastname, String mail, LocalDate birthday) throws InvalidMailException {
         this.setDni(dni);
         this.setName(name);
         this.setLastname(lastname);
+        this.setMail(mail);
+        this.setBirthday(birthday);
+
     }
 
 
