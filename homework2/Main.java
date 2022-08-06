@@ -1,6 +1,7 @@
 package homework2;
 
 import homework2.exceptions.InvalidCourseCostException;
+import homework2.exceptions.InvalidMailException;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -13,11 +14,13 @@ public class Main {
             run();
         } catch (InvalidCourseCostException e) {
             System.out.println(e.getMessage());
+        } catch (InvalidMailException e) {
+            System.out.println(e.getMessage());
         }
 
     }
 
-    public static void run() throws InvalidCourseCostException {
+    public static void run() throws InvalidCourseCostException, InvalidMailException {
 
         LinkedList<Student> students = new LinkedList<>();
 
