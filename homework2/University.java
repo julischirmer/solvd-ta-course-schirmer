@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class University {
     private String name;
     private String location;
-
     private LinkedList<Course> courses = new LinkedList<>();
 
     public University(String name, LinkedList<Course> courses) {
@@ -36,6 +35,19 @@ public class University {
     public void setCourses(LinkedList<Course> courses) {
         this.courses = courses;
     }
+
+    public void getCoursesSize(LinkedList<Course> courses) {
+        System.out.println("The number of available courses are" + courses.size());
+    }
+
+    public void addCourse(Course course) {
+        this.courses.add(course);
+    }
+
+    public void removeCourse(Course course) {
+        this.courses.remove(course);
+    }
+
 
     @Override
     public String toString() {

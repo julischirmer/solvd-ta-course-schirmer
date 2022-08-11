@@ -2,21 +2,26 @@ package homework2;
 
 import homework2.exceptions.InvalidCourseCostException;
 import homework2.exceptions.InvalidMailException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class Main {
+    private static Logger logger = LogManager.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
         try {
+            logger.info("This is info");
             run();
         } catch (InvalidCourseCostException e) {
             System.out.println(e.getMessage());
         } catch (InvalidMailException e) {
             System.out.println(e.getMessage());
         }
+
 
     }
 
@@ -57,7 +62,7 @@ public class Main {
     }
 
     public static void menu(LinkedList<Student> students, LinkedList<Course> courses) throws InvalidCourseCostException {
-        Logger logger = Logger.getLogger("MyLog");
+
         int opc = 1;
         while (opc != 5) {
             System.out.println("Chose an option: \n 1. Create Course \n 2. Find student by dni \n 3. Cost of a Course" +
